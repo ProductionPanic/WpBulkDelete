@@ -24,14 +24,10 @@ jobs:
         run: |
           npm install -g pnpm
 
-      - name: "Setup python3 for build script"
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: "Run build script .github/build.py"
+      - name: "Run build script .github/build.sh"
         run: |
-          python3 ./.github/build.py
+          chmod +x .github/build.sh
+          ./.github/build.sh
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
