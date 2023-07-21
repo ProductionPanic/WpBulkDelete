@@ -9,7 +9,7 @@ on:
 
 jobs:
   pre-release:
-    name: "Pre Release"
+    name: "Create Release"
     runs-on: "ubuntu-latest"
 
     steps:
