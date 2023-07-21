@@ -21,7 +21,7 @@ function yellow {
     color 226 "$@"
 }
 function blue {
-    color 21 "$@"
+    color 39 "$@"
 }
 function cyan {
     color 51 "$@"
