@@ -1,0 +1,48 @@
+---
+name: "create-release"
+
+on:
+  push:
+    branches:
+      - prod
+  workflow_dispatch:
+
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '19.x'
+        
+      - name: "Install pnpm"
+        run: |
+          npm install -g pnpm
+
+      - name: "Run build script .github/build.sh"
+        run: |
+          chmod +x .github/build.sh
+          ./.github/build.sh
+
+      - name: "Rename zip file"
+        run: |
+          mv pp-bulk-delete.zip bulk-delete.zip
+
+      - name: "Get version from pp-bulk-delete.php"
+        id: get_version
+        run: |
+          echo "::set-output name=version::$(grep -oP 'Version: \K.*' pp-bulk-delete.php)"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "v${{ steps.get_version.outputs.version }}"
+          prerelease: false
+          title: "v${{ steps.get_version.outputs.version }} - Bulk Delete"
+          files: |
+            bulk-delete.zip
