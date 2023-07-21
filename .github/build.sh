@@ -102,6 +102,11 @@ rm -rf ./dist
 check
 br 2
 
+blue "    - Removing pp-bulk-delete/pp-bulk-delete"
+rm -rf ./pp-bulk-delete
+check
+br 2
+
 green "#4. Create zip file"
 blue "    - Creating zip file"
 cd ..
