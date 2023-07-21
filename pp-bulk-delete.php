@@ -4,14 +4,14 @@
  * Plugin Name: Bulk Delete
  * Plugin URI: https://github.com/ProductionPanic/WpBulkDelete.git
  * Description: Bulk delete posts, pages, users, attachments and other custom post types and related items
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: ProductionPanic
  * Author URI: https://github.com/ProductionPanic
  * License: GPL3
  * update URI: https://github.com/ProductionPanic/WpBulkDelete.git
  * Requires at least: 5.2
  * Tested up to: 6.2.2
- * Requires PHP: 8.2
+ * Requires PHP: 8.0
  */
 
 
