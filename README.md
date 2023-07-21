@@ -1,20 +1,25 @@
-# WpBulkDelete
+=== Bulk delete ===
+Contributors: @freekattema
+Tags: Bulk, Fast
+Requires at least: 5.2
+Tested up to: 6.2
+Requires PHP: 8.2
+Stable tag: 1.0.0
+License: GPL-3.0
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-[![pre-release](https://github.com/ProductionPanic/WpBulkDelete/actions/workflows/pre_release.yml/badge.svg)](https://github.com/ProductionPanic/WpBulkDelete/actions/workflows/pre_release.yml)
+A tiny plugin to delete posts in bulk without having your server timeout every time.
 
-## Description
-This plugin is designed to delete posts, pages or any custom post type in bulk without any timeouts.
+== Description ==
 
-## Installation
-1. Go to the repository releases page and download the latest release zip file.
-2. Go to your WordPress admin panel and click on Plugins -> Add New -> Upload Plugin.
-3. Upload the zip file and activate the plugin.
+This plugin is a tiny and simple plugin to add a "bulk delete" option to the admin panel "bulk actions" dropdown. 
+It's useful for when you have a lot of posts to delete and don't want to have to wait for the server to time out.
 
-## Usage
-1. when on a post type overview page, in the bulk actions dropdown, you will see a new option called "Bulk Delete".
-2. Select the posts you want to delete and click on the "Bulk Delete" option.
-3. A popup will appear asking you to confirm the deletion.
-4. Confirm and wait for the process to finish.
+== Changelog ==
+= 1.0.0 =
+* Initial release
 
-## License
-This plugin is licensed under the GPL-3.0 license.
+
+== Warning ==
+This plugin is provided as-is, without any warranty whatsoever. Use at your own risk.
+Creating a backup of your database before using this plugin is highly recommended.
