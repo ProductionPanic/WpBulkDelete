@@ -1,0 +1,43 @@
+---
+name: "pre-release"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '19.x'
+        
+      - name: "Install pnpm"
+        run: |
+          npm install -g pnpm
+
+      - name: "Setup python3 for build script"
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: "Run build script .github/build.py"
+        run: |
+          python3 ./.github/build.py
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            pp-bulk-delete.zip
