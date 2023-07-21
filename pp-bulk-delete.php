@@ -4,7 +4,7 @@
  * Plugin Name: Bulk Delete
  * Plugin URI: https://github.com/ProductionPanic/WpBulkDelete.git
  * Description: Bulk delete posts, pages, users, attachments and other custom post types and related items
- * Version: 1.0.1
+ * Version: 1.2.0
  * Author: ProductionPanic
  * Author URI: https://github.com/ProductionPanic
  * License: GPL3
