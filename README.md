@@ -17,4 +17,4 @@ This plugin is designed to delete posts, pages or any custom post type in bulk w
 4. Confirm and wait for the process to finish.
 
 ## License
-This plugin is licensed under the MIT license.
+This plugin is licensed under the GPL-3.0 license.
